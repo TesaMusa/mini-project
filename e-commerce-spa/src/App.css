@@ -1,54 +1,28 @@
-/* Navbar.css */
 :root {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-align: left;
   background-color: white;
 }
 
 body {
   background-color: white;
-  color: #89CFF0;
+  color: #89cff0;
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 1em;
-  width: 100%;
-  padding: 1rem;
-  background-color: #3761af;
-  background-color: var(--theme-bg-color);
-  color: white;
-  color: var(--theme-color);
-}
-
-.navbar .logo {
-  font-size: 1.2em;
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  max-width: 100px;
-  margin-right: 1rem;
-}
-
-/* Sidebar.css */
 .sidebar-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 10px; /* Adjust margin as needed to separate from navbar */
+  margin-top: 10px;
 }
 
 .home,
 .about {
   padding: 10px;
   text-decoration: none;
-  color: #89CFF0;
+  color: #89cff0;
   cursor: pointer;
 }
 
@@ -57,14 +31,13 @@ body {
   background-color: #283b66;
 }
 
-/* Footer.css */
 .footer {
   width: 100%;
   text-align: center;
   position: fixed;
   bottom: 0;
   height: 15vh;
-  background-color: #89CFF0;
+  background-color: #89cff0;
   color: white;
   padding: 1px;
 }

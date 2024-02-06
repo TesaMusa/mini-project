@@ -1,18 +1,20 @@
 import React from "react";
 
-function NavBar(){
-   return (
+function NavBar() {
+  return (
     <>
- <nav className="navbar">
-  <div className="logo">
-    <img src="./src/assets/elogo-bg.png" alt="logo"/>
-    <div className="text">    Angry Cats Emporium
-    </div>
-  </div>
-</nav>
-     
-   </>
-   );
+      <nav>
+        <div className="navbar">
+          <img
+            src="./src/assets/elogo-bg.png"
+            alt="logo"
+            className="imageLogo"
+          />
+          <p> Angry Cats Emporium</p>
+        </div>
+      </nav>
+    </>
+  );
 }
 
 export default NavBar;

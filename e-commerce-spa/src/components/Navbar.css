@@ -1,0 +1,9 @@
+.navbar {
+  display: flex;
+  font-size: 1em;
+  height: 100px;
+  background-color: purple;
+}
+.imageLogo {
+  width: 100px;
+}
