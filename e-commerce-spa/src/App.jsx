@@ -10,6 +10,7 @@ import NavBar from "./components/Navbar";
 import SideBar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
+import Students from "./components/StudentList";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         {/* <h1>Angry Cats Emporium</h1> */}
         <NavBar />
         <SideBar />
+        <Students />
         <Footer />
       </div>
     </>
