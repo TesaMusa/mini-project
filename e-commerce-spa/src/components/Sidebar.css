@@ -1,0 +1,28 @@
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  margin: 0px;
+}
+.sidebar-list {
+  margin: 0px;
+  padding: 30px;
+  background-color: #9896f1;
+  border-radius: 50px;
+  color: #303030;
+  font-size: 20px;
+}
+.home {
+  margin: 0px;
+}
+.home:hover,
+.about:hover {
+  background-color: #283b66;
+}
+.about {
+  text-decoration: none;
+  color: #303030;
+  cursor: pointer;
+  margin: 0px;
+}

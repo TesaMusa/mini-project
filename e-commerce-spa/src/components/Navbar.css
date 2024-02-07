@@ -2,8 +2,18 @@
   display: flex;
   font-size: 1em;
   height: 100px;
-  background-color: purple;
+  background-color: #8ef6e4;
+  border-radius: 50px;
+  font-size: 20px;
 }
 .imageLogo {
   width: 100px;
+}
+.navbarText {
+  align-items: center;
+  display: flex;
+  color: #303030;
+}
+h1 {
+  font-size: 40px;
 }

@@ -10,7 +10,9 @@ function NavBar() {
             alt="logo"
             className="imageLogo"
           />
-          <p> Angry Cats Emporium</p>
+          <div className="navbarText">
+            <h1>Angry Cats Emporium</h1>
+          </div>
         </div>
       </nav>
     </>

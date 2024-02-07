@@ -1,0 +1,23 @@
+.footer {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  height: 6vh;
+  background-color: #edb1f1;
+  color: #303030;
+  padding: 1px;
+  border-radius: 50px;
+}
+
+.rights {
+  margin: 0px;
+}
+
+.git {
+  margin: 0px;
+}
+
+.linkGit {
+  margin: 0px;
+}
