@@ -4,6 +4,7 @@ import students from "../data/students.json";
 
 function Students() {
   const [studentsToDisplay, setStudents] = useState(students);
+  const [femaleStudents, setFemaleStudents] = useState([]);
 
   // Deleting students
   const deleteStudents = (studentId) => {
@@ -11,6 +12,14 @@ function Students() {
       return studentObj.id !== studentId;
     });
     setStudents(newList);
+  };
+
+  //show female students
+  const showFemaleStudents = () => {
+    const females = studentsToDisplay.filter(
+      (student) => student.gender === "Female"
+    );
+    setFemaleStudents(females);
   };
 
   return (
@@ -42,6 +51,17 @@ function Students() {
             ))}
           </tbody>
         </table>
+        <button onClick={showFemaleStudents}>Show Female Students</button>
+        {femaleStudents.length > 0 && (
+          <div>
+            <h2>Female Students</h2>
+            <ul>
+              {femaleStudents.map((student) => (
+                <li key={student.id}>{student.last_name}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </section>
     </>
   );
