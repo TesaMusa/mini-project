@@ -4,6 +4,32 @@ import productList from "../data/ProductList.json";
 function Products() {
   const [productsToDisplay, setProducts] = useState(productList);
   const [lightingProducts, setLightingProducts] = useState([]);
+  const [productName, setProductName] = useState("");
+  const [productDescription, setProductDescription] = useState("");
+  const [productPrice, setProductPrice] = useState("");
+  const [productRating, setProductRating] = useState("");
+  const [productImage, setProductImage] = useState("image");
+
+  // Adding Products
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const newProduct = {
+      productName: productName,
+      productDescription: productDescription,
+      productPrice: productPrice,
+      productRating: productRating,
+      productImage: productImage,
+    };
+    console.log("Submitted", newProduct);
+    const newProductList = [newProduct, ...productsToDisplay];
+    setProducts(newProductList);
+
+    setProductName("");
+    setProductDescription("");
+    setProductPrice(null);
+    setProductRating(null);
+    setProductImage("");
+  };
 
   // Deleting products
   const deleteProduct = (productId) => {
@@ -21,40 +47,108 @@ function Products() {
     setLightingProducts(lighting);
   };
 
+  // the image label is still unfinished. not sure on how to allow passing URLs for the user
   return (
-    <>
-      <section>
-        <h1 className="my-products">Products List</h1>
+    <section>
+      <form onSubmit={handleSubmit}>
+        <span>Add a product</span>
+        <div>
+          <label>
+            Product
+            <input
+              name="productName"
+              type="text"
+              placeholder="Product"
+              value={productName}
+              onChange={(e) => {
+                setProductName(e.target.value);
+              }}
+            />
+          </label>
 
-        <div className="products-container">
-          {productsToDisplay.map((product) => (
-            <div key={product.id} className="product-item">
-              <img src={product.thumbnail} alt={product.title} />
-              <div>
-                <h3>{product.title}</h3>
-                <p>{product.description}</p>
-                <p>Price: ${product.price}</p>
-                <p>Rating: {product.rating}</p>
-                <button onClick={() => deleteProduct(product.id)}>
-                  Delete
-                </button>
-              </div>
-            </div>
-          ))}
+          <label>
+            Description
+            <input
+              name="productDescription"
+              type="text"
+              placeholder="Description"
+              value={productDescription}
+              onChange={(e) => {
+                setProductDescription(e.target.value);
+              }}
+            />
+          </label>
+
+          <label>
+            Price
+            <input
+              name="productPrice"
+              type="number"
+              placeholder="Price"
+              value={productPrice}
+              onChange={(e) => {
+                setProductPrice(e.target.value);
+              }}
+            />
+          </label>
+
+          <label>
+            Rating
+            <input
+              name="productRating"
+              type="number"
+              placeholder="Rating"
+              value={productRating}
+              onChange={(e) => {
+                setProductRating(e.target.value);
+              }}
+            />
+          </label>
+
+          <label>
+            Image
+            <input
+              name="productImage"
+              type="image"
+              placeholder="image"
+              value={productImage}
+              onChange={(e) => {
+                setProductImage(e.target.value);
+              }}
+            />
+          </label>
         </div>
-        <button onClick={showLightingProducts}>Show Lighting Products</button>
-        {lightingProducts.length > 0 && (
-          <div>
-            <h2>Lighting Products</h2>
-            <ul>
-              {lightingProducts.map((product) => (
-                <li key={product.id}>{product.title}</li>
-              ))}
-            </ul>
+        <button type="submit">Add Product</button>
+      </form>
+
+      <h1 className="my-products">Products List</h1>
+
+      <div className="products-container">
+        {productsToDisplay.map((product) => (
+          <div key={product.id} className="product-item">
+            <img src={product.thumbnail} alt={product.title} />
+            <div>
+              <h3>{product.title}</h3>
+              <p>{product.description}</p>
+              <p>Price: ${product.price}</p>
+              <p>Rating: {product.rating}</p>
+              <button onClick={() => deleteProduct(product.id)}>Delete</button>
+            </div>
           </div>
-        )}
-      </section>
-    </>
+        ))}
+      </div>
+      <button onClick={showLightingProducts}>Show Lighting Products</button>
+      {lightingProducts.length > 0 && (
+        <div>
+          <h2>Lighting Products</h2>
+          <ul>
+            {lightingProducts.map((product) => (
+              <li key={product.id}>{product.title}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </section>
   );
 }
 
