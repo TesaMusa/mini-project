@@ -3,11 +3,12 @@
   text-align: center;
   position: fixed;
   bottom: 0;
-  height: 6vh;
+  height: 2vh;
   background-color: #edb1f1;
   color: #303030;
   padding: 1px;
   border-radius: 50px;
+  justify-content: center;
 }
 
 .rights {

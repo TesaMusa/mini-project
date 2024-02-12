@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import productList from "../data/ProductList.json";
+import { useNavigate } from "react-router";
 
 function Products() {
   const [productsToDisplay, setProducts] = useState(productList);
   const [lightingProducts, setLightingProducts] = useState([]);
-
+  const navigate = useNavigate();
   // Deleting products
   const deleteProduct = (productId) => {
     const newList = productsToDisplay.filter(
@@ -29,7 +30,13 @@ function Products() {
         <div className="products-container">
           {productsToDisplay.map((product) => (
             <div key={product.id} className="product-item">
-              <img src={product.thumbnail} alt={product.title} />
+              <img
+                src={product.thumbnail}
+                alt={product.title}
+                onClick={() => {
+                  navigate(`/details/${product.id}`);
+                }}
+              />
               <div>
                 <h3>{product.title}</h3>
                 <p>{product.description}</p>
