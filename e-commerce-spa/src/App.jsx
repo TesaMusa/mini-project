@@ -7,9 +7,11 @@ import "./components/Footer.css";
 import NavBar from "./components/Navbar";
 import SideBar from "./components/Sidebar";
 import Footer from "./components/Footer";
-import HomePage from "./components/HomePage";
-
+import HomePage from "./pages/HomePage";
 import Products from "./components/Products";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import About from "./pages/About";
+import Details from "./components/Details";
 
 function App() {
   return (
@@ -18,7 +20,14 @@ function App() {
         {/* <h1>Angry Cats Emporium</h1> */}
         <NavBar />
         <SideBar />
-        <Products />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/details/:productId" element={<Details />} />
+          <Route path="*" element="page not found" />
+        </Routes>
+
+        <Footer />
       </div>
     </>
   );

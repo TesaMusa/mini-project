@@ -4,6 +4,7 @@
   height: 100px;
   background-color: #8ef6e4;
   border-radius: 50px;
+  justify-content: center;
 }
 .imageLogo {
   width: 100px;
@@ -15,4 +16,8 @@
 }
 h1 {
   font-size: 40px;
+}
+.my-products {
+  display: flex;
+  justify-content: center;
 }

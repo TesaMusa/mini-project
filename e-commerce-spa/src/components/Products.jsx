@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import productList from "../data/ProductList.json";
+import { useNavigate } from "react-router";
 
 function Products() {
   const [productsToDisplay, setProducts] = useState(productList);
