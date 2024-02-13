@@ -3,13 +3,17 @@ function About() {
     <div>
       <h1 className="about">About Us</h1>
       <div className="project-info"> Our project:</div>
-      <p>This project was </p>
+      <p className="project-description">
+        This project was done during the IronHack development bootcamp were we
+        decided Mini E-commerce store
+      </p>
       <div className="names">
         <div className="ari">
           <h2>Rui</h2>
           <p>
             Ex flight attendant that got tired of flying around and decided to
-            ground his feet into the Webdev world link to my github:
+            ground his feet into the Webdev world link to my
+            github:https://github.com/RuiDuram
           </p>
         </div>
         <div className="ari">

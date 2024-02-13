@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import productList from "../data/ProductList.json";
 import { useNavigate } from "react-router";
 
-
-
 function Products() {
   const navigate = useNavigate();
   const [productsToDisplay, setProducts] = useState(productList);
@@ -13,9 +11,6 @@ function Products() {
   const [productPrice, setProductPrice] = useState("");
   const [productRating, setProductRating] = useState("");
   const [productImage, setProductImage] = useState("");
-  
-
-
 
   const handleSubmit = (event) => {
     if (!productName || !productPrice) {
@@ -127,7 +122,6 @@ function Products() {
               }}
             />
           </label>
-         
         </div>
         <button type="submit">Add Product</button>
       </form>
@@ -137,11 +131,10 @@ function Products() {
       <div className="products-container">
         {productsToDisplay.map((product) => (
           <div key={product.id} className="product-item">
-
             <img
               className="image-products"
-              src={product.thumbnail} 
-              alt={product.productImage} 
+              src={product.thumbnail}
+              alt={product.productImage}
               onClick={() => navigate(`/details/${product.id}`)}
             />
             <div className="productsText">
@@ -149,14 +142,12 @@ function Products() {
               <p>{product.productDescription}</p>
               <p>Price: ${product.productPrice}</p>
               <p>Rating: {product.productRating}</p>
-        
-              
+
               <button onClick={() => deleteProduct(product.id)}>Delete</button>
             </div>
           </div>
         ))}
       </div>
-
 
       <button onClick={showLightingProducts}>Show Lighting Products</button>
       {lightingProducts.length > 0 && (
@@ -169,7 +160,6 @@ function Products() {
           </ul>
         </div>
       )}
-      
     </section>
   );
 }
