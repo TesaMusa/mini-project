@@ -1,0 +1,23 @@
+.names {
+  display: flex;
+  width: 100%;
+
+  justify-content: space-evenly;
+  font-size: 30px;
+}
+.about {
+  display: flex;
+  justify-content: center;
+
+  color: #3d405b;
+  font-size: 150px;
+}
+.textAboutUs {
+  display: flex;
+}
+.ari {
+  display: flex;
+  max-width: 70px;
+  margin: 0px;
+  flex-wrap: wrap;
+}
