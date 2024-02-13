@@ -18,14 +18,20 @@ function Products() {
 
 
   const handleSubmit = (event) => {
+    if (!productName || !productPrice) {
+      alert("Please fill in the empty fields");
+      return;
+    }
     event.preventDefault();
     const newProduct = {
+      id: Date.now(),
       productName: productName,
       productDescription: productDescription,
       productPrice: productPrice,
       productRating: productRating,
       productImage: productImage,
     };
+
     console.log("Submitted", newProduct);
     const newProductList = [newProduct, ...productsToDisplay];
     setProducts(newProductList);
@@ -36,7 +42,6 @@ function Products() {
     setProductRating("");
     setProductImage("");
   };
-
   // Deleting products
   const deleteProduct = (productId) => {
     const newList = productsToDisplay.filter(
@@ -122,6 +127,7 @@ function Products() {
               }}
             />
           </label>
+         
         </div>
         <button type="submit">Add Product</button>
       </form>
@@ -131,24 +137,26 @@ function Products() {
       <div className="products-container">
         {productsToDisplay.map((product) => (
           <div key={product.id} className="product-item">
+
             <img
               className="image-products"
-              src={product.thumbnail}
-              alt={product.title}
-              onClick={() => {
-                navigate(`/details/${product.id}`);
-              }}
+              src={product.thumbnail} 
+              alt={product.productImage} 
+              onClick={() => navigate(`/details/${product.id}`)}
             />
             <div className="productsText">
-              <h3>{product.title}</h3>
-              <p>{product.description}</p>
-              <p>Price: ${product.price}</p>
-              <p>Rating: {product.rating}</p>
+              <h3>{product.productName}</h3>
+              <p>{product.productDescription}</p>
+              <p>Price: ${product.productPrice}</p>
+              <p>Rating: {product.productRating}</p>
+        
+              
               <button onClick={() => deleteProduct(product.id)}>Delete</button>
             </div>
           </div>
         ))}
       </div>
+
 
       <button onClick={showLightingProducts}>Show Lighting Products</button>
       {lightingProducts.length > 0 && (
