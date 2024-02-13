@@ -22,3 +22,8 @@
   flex-wrap: wrap;
   flex-direction: column;
 }
+.project-info {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+}
