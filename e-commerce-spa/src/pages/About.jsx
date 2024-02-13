@@ -1,9 +1,9 @@
-import Products from "../components/Products";
 function About() {
   return (
     <div>
       <h1 className="about">About Us</h1>
       <div className="project-info"> Our project:</div>
+      <p>This project was </p>
       <div className="names">
         <div className="ari">
           <h2>Rui</h2>
