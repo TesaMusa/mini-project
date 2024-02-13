@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import productList from "../data/ProductList.json";
 import { useNavigate } from "react-router";
 
+
+
 function Products() {
   const navigate = useNavigate();
   const [productsToDisplay, setProducts] = useState(productList);
@@ -11,22 +13,10 @@ function Products() {
   const [productPrice, setProductPrice] = useState("");
   const [productRating, setProductRating] = useState("");
   const [productImage, setProductImage] = useState("");
+  
 
-  /*const checkFormValidity = () => {
-    return (
-      productName !== "" &&
-      productDescription !== "" &&
-      productPrice !== "" &&
-      productRating !== "" &&
-      productImage !== ""
-    );
-  }; */
 
-  // Adding Products
-  //const handleSubmit = (event) => {
-  // if (!checkFormValidity) {
-  //   return;
-  // }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const newProduct = {
@@ -159,6 +149,7 @@ function Products() {
           </div>
         ))}
       </div>
+
       <button onClick={showLightingProducts}>Show Lighting Products</button>
       {lightingProducts.length > 0 && (
         <div>
@@ -170,6 +161,7 @@ function Products() {
           </ul>
         </div>
       )}
+      
     </section>
   );
 }
