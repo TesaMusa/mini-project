@@ -3,6 +3,8 @@ import "./App.css";
 import "./components/Navbar.css";
 import "./components/Sidebar.css";
 import "./components/Footer.css";
+import "./pages/About.css";
+import "./components/Products.css";
 
 import NavBar from "./components/Navbar";
 import SideBar from "./components/Sidebar";

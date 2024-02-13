@@ -3,22 +3,8 @@
   text-align: center;
   position: fixed;
   bottom: 0;
-  height: 2vh;
-  background-color: #edb1f1;
+  height: 1vh;
+  background-color: #81b29a;
   color: #303030;
-  padding: 1px;
-  border-radius: 50px;
   justify-content: center;
-}
-
-.rights {
-  margin: 0px;
-}
-
-.git {
-  margin: 0px;
-}
-
-.linkGit {
-  margin: 0px;
 }
