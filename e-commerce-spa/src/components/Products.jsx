@@ -9,11 +9,24 @@ function Products() {
   const [productDescription, setProductDescription] = useState("");
   const [productPrice, setProductPrice] = useState("");
   const [productRating, setProductRating] = useState("");
-  const [productImage, setProductImage] = useState("image");
+  const [productImage, setProductImage] = useState("");
+
+  const checkFormValidity = () => {
+    return (
+      productName !== "" &&
+      productDescription !== "" &&
+      productPrice !== "" &&
+      productRating !== "" &&
+      productImage !== ""
+    );
+  };
 
   // Adding Products
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!checkFormValidity) {
+      return;
+    }
     const newProduct = {
       productName: productName,
       productDescription: productDescription,
@@ -110,7 +123,7 @@ function Products() {
             Image
             <input
               name="productImage"
-              type="image"
+              type="text"
               placeholder="image"
               value={productImage}
               onChange={(e) => {
