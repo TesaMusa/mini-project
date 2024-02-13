@@ -2,7 +2,8 @@
   display: flex;
   font-size: 1em;
   height: 100px;
-  background-color: #e07a5f;
+  background-color: #8ef6e4;
+  border-radius: 50px;
   justify-content: center;
 }
 .imageLogo {

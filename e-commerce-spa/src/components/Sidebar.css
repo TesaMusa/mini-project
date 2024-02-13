@@ -8,19 +8,21 @@
 .sidebar-list {
   margin: 0px;
   padding: 30px;
-  background-color: #81b29a;
-  color: #81b29a;
+  background-color: #9896f1;
+  border-radius: 50px;
+  color: #303030;
   font-size: 20px;
-  display: flex;
-  flex-direction: column;
 }
 .home {
   margin: 0px;
 }
-
+.home:hover,
+.about:hover {
+  background-color: #283b66;
+}
 .about {
   text-decoration: none;
-  color: #81b29a;
+  color: #303030;
   cursor: pointer;
   margin: 0px;
 }

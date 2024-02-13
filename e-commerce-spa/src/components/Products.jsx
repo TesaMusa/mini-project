@@ -31,14 +31,13 @@ function Products() {
           {productsToDisplay.map((product) => (
             <div key={product.id} className="product-item">
               <img
-                className="image-products"
                 src={product.thumbnail}
                 alt={product.title}
                 onClick={() => {
                   navigate(`/details/${product.id}`);
                 }}
               />
-              <div className="productsText">
+              <div>
                 <h3>{product.title}</h3>
                 <p>{product.description}</p>
                 <p>Price: ${product.price}</p>
