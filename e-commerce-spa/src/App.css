@@ -2,11 +2,15 @@
   font-family: "Lucida Console", "Open Sans", sans-serif;
   text-align: left;
   background-color: #f4f1de;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
   background-color: #f4f1de;
   color: #3d405b;
+  margin: 0px;
+  padding: 0px;
 }
 
 button {

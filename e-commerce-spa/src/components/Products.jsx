@@ -42,8 +42,8 @@ function Products() {
 
     setProductName("");
     setProductDescription("");
-    setProductPrice(null);
-    setProductRating(null);
+    setProductPrice("");
+    setProductRating("");
     setProductImage("");
   };
 
@@ -66,8 +66,7 @@ function Products() {
   // the image label is still unfinished. not sure on how to allow passing URLs for the user
   return (
     <section>
-      <form onSubmit={handleSubmit}>
-        <span>Add a product</span>
+      <form onSubmit={handleSubmit} className="form-css">
         <div>
           <label>
             Product

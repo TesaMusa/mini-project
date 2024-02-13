@@ -7,6 +7,7 @@
   margin: 20px;
   border: 0.5px solid;
   border-color: #e07a5f;
+  box-shadow: 5px 5px 5px #e07a5f;
 }
 .products-container {
   display: flex;
@@ -19,4 +20,9 @@
   width: 500px;
   object-fit: contain;
   background-color: transparent;
+}
+.form-css {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
