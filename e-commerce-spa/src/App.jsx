@@ -15,6 +15,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Details from "./components/Details";
 
+
 function App() {
   return (
     <>
@@ -23,7 +24,7 @@ function App() {
         <NavBar />
         <SideBar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Products />} />
           <Route path="/about" element={<About />} />
           <Route path="/details/:productId" element={<Details />} />
           <Route path="*" element="page not found" />

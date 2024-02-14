@@ -19,14 +19,13 @@ function Products() {
     }
     event.preventDefault();
     const newProduct = {
-      id: Date.now(),
+      
       productName: productName,
       productDescription: productDescription,
       productPrice: productPrice,
       productRating: productRating,
       productImage: productImage,
     };
-
     console.log("Submitted", newProduct);
     const newProductList = [newProduct, ...productsToDisplay];
     setProducts(newProductList);
@@ -52,11 +51,17 @@ function Products() {
     );
     setLightingProducts(lighting);
   };
-
+  const filterIPhoneProducts = () => {
+    const iPhoneProducts = productList.filter(
+      (product) => product.category === "laptops"
+    );
+    setProducts(iPhoneProducts);
+  };
   // the image label is still unfinished. not sure on how to allow passing URLs for the user
   return (
     <section>
       <form onSubmit={handleSubmit} className="form-css">
+        <span>Add a product</span>
         <div>
           <label>
             Product
@@ -122,6 +127,7 @@ function Products() {
               }}
             />
           </label>
+        
         </div>
         <button type="submit">Add Product</button>
       </form>
@@ -134,32 +140,25 @@ function Products() {
             <img
               className="image-products"
               src={product.thumbnail}
-              alt={product.productImage}
-              onClick={() => navigate(`/details/${product.id}`)}
+              alt={product.title}
+              onClick={() => {
+                navigate(`/details/${product.id}`);
+              }}
             />
             <div className="productsText">
-              <h3>{product.productName}</h3>
-              <p>{product.productDescription}</p>
-              <p>Price: ${product.productPrice}</p>
-              <p>Rating: {product.productRating}</p>
-
+              <h3>{product.title}</h3>
+              <p>{product.description}</p>
+              <p>Price: ${product.price}</p>
+              <p>Rating: {product.rating}</p>
               <button onClick={() => deleteProduct(product.id)}>Delete</button>
             </div>
           </div>
         ))}
       </div>
 
-      <button onClick={showLightingProducts}>Show Lighting Products</button>
-      {lightingProducts.length > 0 && (
-        <div>
-          <h2>Lighting Products</h2>
-          <ul>
-            {lightingProducts.map((product) => (
-              <li key={product.id}>{product.title}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+
+      <button onClick={filterIPhoneProducts}>Show Products by category</button>
+
     </section>
   );
 }
